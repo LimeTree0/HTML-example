@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Coding</title>
+</head>
+<body>
+    <h1 id = "title"></h1>
+    <form id="myform">
+        반지름 : <input type="text" name="radius">
+    </form>
+    <button onclick="circle_size()">compute</button>
+
+    <h3 id = "output"></h3>
+    <p id="text"></p>
+
+
+    <script>
+        var title = document.getElementById("title"); //title --> <h1 id = title>
+        title.innerHTML = "원의 면적 구하기";
+        circles();
+
+        function circle_size() {
+            //입력창에 입력된 반지름을 읽어와서 면적 계산하고 <h3>에 출력
+            var rad = document.forms["myform"]["radius"].value;
+            let size = rad ** 2 * 3.1415;
+            document.getElementById("output").innerHTML = "원의 면적 = " + 
+            Math.round(size.toFixed(2) * 10)/ 10;
+        }
+        var text = '<ul>';
+        function circles() {
+            var r = [8,12,19,21,37];
+            r.push(41);
+            
+                r.forEach(calc);
+            // for(let i=0; i<r.length; i++){
+            //     let size = r[i] ** 2 * 3.1415;
+            //     text += "<li>" + r[i] + " ->" + size + "</li>";
+            // }
+            text += "</ul>";
+            var show = function(text) {
+                document.getElementById("text").innerHTML = text;
+            }
+            show(text);
+        }
+        function calc(value, index, array) {  //값, 인덱스, 배열전체
+            let size = value ** 2 * 3.1415;
+            text += "<li>" + array[index] + " ->" + size + "</li>";
+            // alert(size);
+        }
+    </script>
+</body>
+</html>

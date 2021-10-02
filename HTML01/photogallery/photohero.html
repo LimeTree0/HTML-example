@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body{
+				height: 100vh;
+				margin: 0;
+			}
+			.hero-image{
+				background-image: url(Photographer.png);
+				background-position: center;
+				background-size: cover;
+				background-attachment: fixed;
+				height: 70%; /*부모의 세로크기의 70%*/
+				position: relative; /*hero-text의 배치 공간*/
+			}
+			.hero-text{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				text-align: center;
+			}
+			.hero-text button{
+				border: none;
+				display: inline-block;
+				color: black;
+				background-color: #ddd;
+				text-align: center;
+				font-size: 20px;
+				padding: 10px 25px;
+				cursor: pointer;
+			}
+
+			.hero-text button:hover{
+				background-color: #555;
+				color: white;
+			}
+
+			.main{
+				width: 70%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+				font-size: 1.5em;
+				line-height: 2em;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="hero-image">
+			<div class="hero-text">
+				<h1>My Photo Gallery</h1>
+				<p>I'm a Photographer</p>
+				<button>Enter</button>
+			</div>
+		</div>
+		<p class="main">A good photography website is a showcase for photos. Take inspiration from real-world photo galleries— your website should be uncluttered and have plenty of whitespace to frame your photos.</p>
+	</body>
+</html>

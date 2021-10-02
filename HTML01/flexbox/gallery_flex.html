@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <title>My Photos(Flex)</title>
+        <meta charset="utf-8">
+        <style>
+            h1{
+                text-align: center;
+                padding: 30px;
+            }
+            .row{/*flex container*/
+                display: flex;
+                padding: 0 4px;
+            }
+            .col{
+                flex: 1;/*grow : 1 shrink : 1 auto*/
+                width: 25%;
+                padding: 0 4px;
+            }
+            .col img{
+                width: 100%;
+                margin-top: 8px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Photos with Flex Layout</h1>
+        <div class="row">
+            <div class="col">
+                <img src="images/image1.jpg">
+                <img src="images/image2.jpg">
+                <img src="images/image3.jpg">
+                <img src="images/image4.jpg">
+                <img src="images/image5.jpg">
+                <img src="images/image6.jpg">
+                <img src="images/image7.jpg">
+            </div>
+            <div class="col">
+                <img src="images/image8.jpg">
+                <img src="images/image9.jpg">
+                <img src="images/image10.jpg">
+                <img src="images/image11.jpg">
+                <img src="images/image12.jpg">
+                <img src="images/image13.jpg">
+            </div>
+            <div class="col">
+                <img src="images/image14.jpg">
+                <img src="images/image15.jpg">
+                <img src="images/image16.jpg">
+                <img src="images/image17.jpg">
+                <img src="images/image18.jpg">
+                <img src="images/image19.jpg">
+                <img src="images/image20.jpg">
+            </div>
+            <div class="col">
+                <img src="images/image2.jpg">
+                <img src="images/image4.jpg">
+                <img src="images/image6.jpg">
+                <img src="images/image8.jpg">
+                <img src="images/image10.jpg">
+                <img src="images/image12.jpg">
+            </div>
+        </div>
+    </body>
+</html>
+

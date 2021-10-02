@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link  href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mango Cafe</title>
+    <style>
+        body{
+            height: 100vh; /*vh : viewport height. viewport : 페이지가 시각적으로 보여지는 높이*/
+            margin: 0;
+        }
+        .back{
+            background-image: url("coffee1.jpg");
+            background-position:  center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%; /*부모 여역의 100% 세로 크기*/
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slogan{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            background-color: rgb(0, 0, 0,0.5);
+            padding-left: 60px;
+            padding-right: 60px;
+            text-align: center;
+        }
+        h1{
+            font-size: 300%;
+            margin-bottom: 0;
+            font-style: italic;
+            font-family: 'Book Antiqua',cursive;
+        }
+        h3{
+            font-size: 200%;
+            margin-top: 0;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            padding: 10px;
+        }
+        p{
+            color: coral;
+            font-size: 130%;
+        }
+
+        .slogan button{
+            border: none;
+            padding: 10px 25px;
+            color: black;
+            background-color: #ddd;
+            text-align: center;
+            cursor: pointer;
+        }
+        .slogan button:hover{
+            background-color: orangered;
+            color: white;
+        }
+        /*navigation bar 1*/
+        .topnav{
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+        }
+        .topnav a{
+            color: #f2f2f2;
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+            padding: 14px 16px;
+            float: left;
+        }
+        .topnav a:hover{
+            background-color: #ddd;
+            color: black;
+        }
+        .topnav a.active{
+            background-color: orange;
+            color: white;
+        }
+        /*navigation bar 2*/
+        ul{
+            list-style-type: none;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0, 0,0,0.3);
+        }
+        li{
+            float: left;
+        }
+        li a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active){
+            background-color: orangered;
+        }
+        li .dropdwon{
+            display: block;
+        }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0x 8px 16px 0px rgba(200,0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a{
+            color: black;
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+        }
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+        .dropdown-content a:hover{
+            background-color: chartreuse;
+        }
+        /* full screen menu*/
+        .overlay{
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .overlay-content{
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#home">Menu</a>
+        <a href="#home">News</a>
+        <a href="#home">About</a>
+    </div>
+    <ul>
+        <li><a href="#home" class="active"> <i class="material-icons">home</i> Home</a></li>
+        <li><a href="#home">Menu</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="drop-button">News</a>
+            <div class="dropdown-content">
+                <a href="#">News 1</a>
+                <a href="#">News 2</a>
+                <a href="#">News 3</a>
+            </div>
+        </li>
+        <li  style="float: right;"><a href="#home" onclick="openNav()">About</a></li>
+    </ul>
+
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Client</a>
+        <a href="#">contact</a>
+    </div>
+</div>
+
+    <div class="back">
+        <div class="slogan">
+            <h1>Fall in love</h1>
+            <h3>with Mango</h3>
+            <button>Our Coffee</button>
+            <p>Open 10am to 11pm,Mon - Sat</p>
+        </div>
+
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+        function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+        }
+    </script>
+</body>
+</html>

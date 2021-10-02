@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Mango Cafe</title>
+        <meta charset="utf-8">
+        <style>
+            #movie{
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+            }
+            .slogan{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            background-color: rgb(0, 0, 0,0.5);
+            padding-left: 60px;
+            padding-right: 60px;
+            text-align: center;
+        }
+        h1{
+            font-size: 300%;
+            margin-bottom: 0;
+            font-style: italic;
+            font-family: 'Book Antiqua',cursive;
+        }
+        h3{
+            font-size: 200%;
+            margin-top: 0;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            padding: 10px;
+        }
+        p{
+            color: coral;
+            font-size: 130%;
+        }
+
+        .slogan button{
+            border: none;
+            padding: 10px 25px;
+            color: black;
+            background-color: #ddd;
+            text-align: center;
+            cursor: pointer;
+        }
+        .slogan button:hover{
+            background-color: orangered;
+            color: white;
+        }
+        #play{
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 5px;
+        }
+        </style>
+    </head>
+    <body>
+        <video id="movie" autoplay loop muted>
+            <source src = "coffeeshop.mp4" type="video/mp4">
+        </video>
+        <div class="slogan">
+            <h1>Fall in love</h1>
+        <h3>with Mango Coffee</h3>
+        <button>Our Coffee</button>
+        <p>Open 10am to 11pm, Mon - Sat</p>
+        </div>
+        <button id="play" onclick="myFunc()">Pause</button>
+        <script>
+            var video = document.getElementById("movie");
+            var btn = document.getElementById("play");
+
+            function myFunc() {
+                if(video.paused){
+                    video.play();
+                    btn.innerHTML = "Pause";
+                }
+                else{
+                    video.pause();
+                    btn.innerHTML = "Play";
+                }
+            }
+        </script>
+    </body>
+</html>

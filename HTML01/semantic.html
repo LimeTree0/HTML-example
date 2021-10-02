@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background: #ccc;
+            height: 100vh;
+            margin: 0;
+        }
+        .wrapper > *{
+            border: 2px solid #f08c00;
+            background: #ffec99;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .wrapper{
+            height: 100%;
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-rows: 100px 2fr 1fr 60px;
+            gap: 5px;
+            grid-template-areas:
+             "header header header"
+             "nav content side"
+             "nav content ad"
+             "footer footer footer"
+            ;
+        }
+        .header{
+            grid-area: header;
+        }
+        .nav{
+            grid-area: nav;
+        }
+        .side{
+            grid-area: side;
+        }
+        .ad{
+            grid-area: ad;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .content{
+            grid-area: content;
+        }
+        
+        /*Responsive web*/
+        @media(max-width: 500px){
+            .wrapper{
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                "header"
+                "nav"
+                "content"
+                "side"
+                "ad"
+                "footer"
+                 ;
+            }
+        }
+        @media(max-width: 800px) and (min-width: 5001px){
+            .wrapper{
+            grid-template-columns:200px 1fr;
+            grid-template-rows: 100px 1fr 50px 50px 60px;
+            grid-template-areas:
+            "header header"
+            "nav content"
+            "side side"
+            "ad ad"
+            "footer footer"
+             ;
+             }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">The Header</header>
+        <nav class="nav">
+            <ul>
+                <li><a href="">Menu 1</a></li>
+                <li><a href="">Menu 2</a></li>
+                <li><a href="">Menu 3</a></li>
+                <li><a href="">Menu 4</a></li>
+            </ul>
+        </nav>
+        <article class="content">
+            <h1>Main article</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam expedita quidem facere quod in alias a velit quia. Quasi eligendi vel, porro amet eos natus architecto dolorum optio sit tempora?</p>
+        </article>
+        <aside class="side">sidebar</aside>
+        <div class="ad">Advertising</div>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>
